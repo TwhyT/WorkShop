@@ -1,0 +1,184 @@
+.MyBG { 
+    background: linear-gradient(-45deg, #fff352, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 4s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	    }
+	50% {
+		background-position: 100% 50%;
+	    }
+	100% {
+		background-position: 0% 50%;
+	    }
+    }
+
+.MyTextDrop { 
+    background-color: #eec0c6;
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+
+    background-size: 400% 400%;
+    animation: gradient 4s ease infinite;
+}
+
+.brandname{
+    font-size:xx-large; 
+    font-weight:bolder; 
+    font-style: italic; 
+    font-family:serif; 
+    color: #ce4a7eff; 
+    color: linear-gradient(90deg, rgb(255, 190, 216), rgb(251, 139, 184), rgb(238, 96, 153), #ce4a7eff);
+    animation: brand 4s ease infinite;
+}
+
+@keyframes brand {
+    0%   {color: #ce4a7eff;}
+    25%  {color: rgb(216, 58, 84);}
+    50%  {color: rgb(206, 74, 74);}
+    100% {color:#ce4a7eff;}
+    }
+
+.MyText { 
+        color: linear-gradient(90deg, #fff352, #e73c7e, #23a6d5, #23d5ab);
+        animation: example1 4s ease infinite;
+        font-size: x-large;
+        font-weight: bolder;
+    }
+
+@keyframes example1 {
+        0%   {color: #fff352;}
+        25%  {color: #e73c7e;}
+        50%  {color: #23a6d5;}
+        100% {color: #23d5ab;}
+        }
+
+.MyBGButton { 
+    background: linear-gradient(-90deg, #fe0061, #ff4800, #ff7b00, #fe0061);
+    background-size: 400% 400%;
+    animation: button 4s ease infinite;
+}
+
+
+@keyframes button {
+    0% {
+        background-position: 0% 50%;
+        }
+    50% {
+        background-position: 100% 50%;
+        }
+    100% {
+        background-position: 0% 50%;
+        }
+    }
+
+.MyTitle {
+    font-family: "Montserrat";
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    letter-spacing: 1px;
+}
+
+.TextImg {
+background-image: url(https://media.giphy.com/media/fYAveU3KcOJH4Yr3ma/giphy.gif);
+background-size: cover;
+color: transparent;
+-moz-background-clip: text;
+-webkit-background-clip: text;
+text-transform: uppercase;
+font-size: 100px;
+line-height: .75;
+margin: 10px 0;
+height: 75vh;
+}
+
+.fixline {
+    position: absolute;
+    bottom: 3%;
+    left: 1.25rem;
+}
+/* Card Set */
+.CardBG { 
+    background-color: #ffffff;
+    /* background-image: linear-gradient(90deg, #ff8b9a 0%, #4fd9f1 74%); */
+    /* background-size: 400% 400%; */
+    color: rgb(0, 0, 0);
+    border-color: white;
+    font-weight: bolder;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit:contain;
+}
+.card-img-top:hover{
+    width: 100%;
+    height: 15vw;
+    object-fit:contain;
+    box-shadow: 20px 20px 50px gray;
+}
+
+.carddetail{
+    color: white;
+    background-color: #000000;
+}
+
+.carddetail:hover{
+    color: #fb75a8;
+    box-shadow: 5px 10px #e11584;
+}
+
+.TextCol1{
+    color: #e11584;
+}
+
+.Bred {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255); 
+    font-weight: bolder;
+    font-size:small;
+}
+
+.BredTag { 
+    background-color: #000000;
+    color:#E31C79; 
+    font-weight: bolder;
+    font-size:x-large;
+}
+
+.DropBG{ 
+    background-color: rgb(255, 255, 255);
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.SortBG { 
+    background-color: rgb(0, 0, 0);
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.MyBGButton { 
+    background: linear-gradient(-90deg, #fe0061, #ff4800, #ff7b00, #fe0061);
+    background-size: 400% 400%;
+    animation: button 4s ease infinite;
+}
+
+@keyframes button {
+    0% {
+        background-position: 0% 50%;
+        }
+    50% {
+        background-position: 100% 50%;
+        }
+    100% {
+        background-position: 0% 50%;
+        }
+    }

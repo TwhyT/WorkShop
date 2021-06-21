@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Perfect Skin - Beauty Shop</title>
+<head>
+  {% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, height=50px">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+<link rel="stylesheet" href="{static/css/index.css">
+
+</head>
+
+<body>
+<!-- Bar Part -->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark p-0 justify-content-center" style="background-color: #000000;">
+  <div class="row container-fluid">
+    <div class="col-10">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link MyText" style="font-size:xx-large; font-style: italic; font-family: -apple-system;">PERFECTSKIN</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-2 ">
+      <div class="d-flex justify-content-center align-content-center"> 
+        <div class="dropdown" >
+          <button class="btn text-white MyBG dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            MENU
+          </button>
+          <div class="dropdown-menu float-md-left" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">FEATURE</a>
+            <a class="dropdown-item" href="{% url 'contact' %}">CONTACT</a>
+            <a class="dropdown-item" href="{% url 'about' %}">ABOUT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</nav>
+</header>
+
+<!-- Page content -->
+<section>
+  <div class="row m-0 p-0 container-md" style="height:auto; background-image:url( static/img/indexP1BG.jpg ) ; background-size: cover;">
+      <div class="container-fluid">
+        <div class="row">
+          
+        </div>
+      </div>
+  </div>
+  <div class="row justify-content-center m-0 align-content-center" style="height: 150px; background:rgb(0, 0, 0);">
+    <a class="nav-link mx-5 container-md ABOUTGra" href="{% url 'productlist' %}" style="font-size:xx-large; font-family: -apple-system; ">SHOP NOW</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: #000000;" class="fixed-bottom mx-0">
+  <div class="row justify-content-center align-content-center " style="background-color: #161515;">
+    <a class="MyText" >Copyright © 2021 Intelligent Bytes Co., Ltd. All Rights Reserved.</a>
+  </div>
+</footer>
+
+<!-- End  -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+</html>

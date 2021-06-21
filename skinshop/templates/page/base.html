@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {% load static %}
+    <title>M2M - {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='w3'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" >
+    <link rel="stylesheet" href="https://kinsta.com/blog/modern-fonts/#7-zafir">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" > <!--Playfair Display-->
+    <link rel="stylesheet" href="{%static 'css/base.css' %}">
+    </head>
+    <body style="background-color: white; resize: both; overflow:auto;">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark p-0 justify-content-center" style="background-color: black;" >
+            <div class="row container-fluid">
+                <div class="col-3 container-md">
+                    <div class="row mx-1 p-0 w-100 justify-content-start align-content-center " >
+                        <!-- Drop Menu -->
+                        <div class="dropdown justify-content-center align-items-center">
+                            <button class="btn dropdown-toggle w-100 mb-2 " style=" color:white ; font-size: x-large; font-weight:bolder;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                PRODUCT
+                            </button>
+                            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" style="background-color: black;">
+                                <a href="{% url 'productlist' %}?category={{category.id}}" class="dropdown-item text-white" style="font-weight: bolder;" >ALL CATEGORY</a>
+                                {% for category in category %}
+                                <a href="{% url 'productlist' %}?category={{category.id}}" class="dropdown-item text-white" style="font-weight: bolder;" >{{ category.name }}</a>
+                                {% endfor %} 
+                            </div>
+                        </div>
+                        <div class="dropdown justify-content-center align-items-center">
+                            <button class="btn dropdown-toggle w-100 mb-2 " style=" color:white ; font-size: x-large; font-weight:bolder;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                MENU
+                            </button>
+                            <div class="dropdown-menu w-100 text-center " aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{% url 'contact' %}">CONTACT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 container-md">
+                    <ul class="navbar-nav justify-content-center align-content-center">
+                        <li class="nav-item">
+                        <a class="nav-link brandname" href="{% url 'index' %}">M2M</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 container-md">
+                    <div class="row justify-content-end">
+                        <form class="form-inline my-2 my-lg-0" action="{{ request.path }}" method="GET">
+                            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn MyBGButton text-white my-2 my-sm-0" type="submit">SEARCH</button>
+                        </form>
+                        {% if not user.is_authenticated %}
+                            <a class="btn MyBGButton text-white my-2 my-sm-0 mx-2 " href="{% url 'signup' %}" type="submit">SIGN UP</a>
+                            <a class="btn MyBGButton text-white my-2 my-sm-0 mx-2 " href="{% url 'login' %}" type="submit">SIGN IN</a>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <span style="color: white;" class="mx-3">Hello, {{request.user.username}}</span>
+                            <form action="{% url 'logout' %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn MyBGButton text-white my-2 my-sm-0 mx-2" type="submit">LOG OUT</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+        <!-- Part BreardCrume -->
+        <div class="container-fluid px-0 mx-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb Bred  pb-0 Bred">
+                    <li class="breadcrumb-item  "><a style="color: rgb(0, 0, 0); font-weight: bolder; font-size: large;" href="{% url 'index' %}">HOME</a></li>
+                    <li class="breadcrumb-item  "><a style="color: rgb(0, 0, 0); font-weight: bolder; font-size: large;" href="{% url 'productlist' %}?category={{categoryID}}">{{bred}}</a></li>
+                    {% if product.name  %}
+                    <li class="breadcrumb-item " style="color: rgb(0, 0, 0);font-weight: bolder ;font-size: large;" aria-current="page">{{product.name}}</li>
+                    {% endif %}
+                </ol>
+            </nav>
+        </div>
+
+        <!-- PartProduct-->  
+        <div class="row mx-0">
+            <!-- Slide Bar-->
+            <div class="col-2 DropBG" style="height: auto;">
+                <div>
+                    <ul class="nav nav-pills nav-fill flex-lg-column">
+                        <div class="dropdown justify-content-center align-content-center">
+                            <a href="{% url 'productlist' %}" class="BredTag btn w-100 mb-2" style=" color:rgb(255, 255, 255) ; font-size:x-large; font-weight:bolder; background-color: black;">
+                                CATEGORY
+                            </a>
+                            <div class=" w-100 text-center" style="font-family: Playfair Display; font-size: larger;" aria-labelledby="dropdownMenuButton">
+                                <a href="{% url 'productlist' %}?category={{category.id}}" style="font-weight: bolder;" class="dropdown-item ">ALL CATEGORY</a>
+                                {% for category in category %}
+                                <a href="{% url 'productlist' %}?category={{category.id}}" style="font-weight: bolder;" class="dropdown-item ">{{ category.name }}</a>
+                                {% endfor %} 
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class=" col-10 ">
+            <!-- Content -->
+            {% block content %}
+            {% endblock %}  
+            </div>
+        </div>
+      
+        <footer class="container-fluid fixed-bottom mx-0 px-0">
+                <div class="row justify-content-center align-content-center m-0 p-0" style="background-color: #161515;">
+                    <a class="MyText">Copyright © 2021 Intelligent Bytes Co., Ltd. All Rights Reserved.</a>
+                </div>
+        </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

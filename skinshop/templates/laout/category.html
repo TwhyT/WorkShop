@@ -1,0 +1,85 @@
+{% extends "page/base.html" %}
+{% load static %}
+<head>
+    <title>{% block title %}Category-{{bred}}{% endblock %}</title>
+</head>
+{% block content %}
+
+    <div class=" row container-fluid mx-0 px-0 mb-3">
+        <div class="col-9 container-fluid" >
+            <div class="row mx-0 text-center">
+                <a class="BredTag btn w-100 mb-2 " style=" color:rgb(255, 255, 255) ; font-size: x-large; font-weight:bolder; background-color: black;">Category {{bred}}</a>
+            </div>
+        </div>
+        <div class="col-3 container-fluid ">
+            <div class=" dropdown justify-content-center align-items-center">
+                <button class="btn dropdown-toggle w-100 mb-2 " style=" color:rgb(255, 255, 255) ; font-size: x-large; font-weight:bolder; background-color: black;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SORT
+                </button>
+                <div class="dropdown-menu w-100 text-center " aria-labelledby="dropdownMenuButton">
+                    <a href="{{ request.path }}?category={{categoryID}}&search={{search}}&sort=asc" class="dropdown-item align-content-center " type="submit" >PRICE: LOW TO HIGH</a>
+                    <a href="{{ request.path }}?category={{categoryID}}&search={{search}}&sort=desc" class="dropdown-item align-content-center " type="submit">PRICE: HIGH TO LOW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mx-0">
+                            
+        {% for p in product %}
+        <div class="col-lg-3 mb-3">
+            <div class="card CardBG h-100">
+                <a href="{% url 'detail' slug=p.code %}">
+                    <img src="{{ p.image.url }}"  class="card-img-top" style="height: 300px;">
+                </a>
+                <div class="card-body mb-5">
+                    <h5><a href="{% url 'detail' slug=p.code %}" style="color: rgb(0, 0, 0); font-family:Helvetica ;font-weight: bold;">{{p.name}}</a></h5>
+                    <div style="font-weight: 750">Category: {{ p.category.name }} </div>
+                    <div style="font-weight: 750">Price: {{ p.price|floatformat:2 }} $</div>
+                </div>
+                <div class="row card-body justify-content-start align-content-center mx-3">
+                    <a href="{% url 'detail' slug=p.code %}" class="btn fixline carddetail">Views Detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>       
+    <ul class="pagination justify-content-center my-5">
+        {% if product.has_previous %}
+        <li class="page-item"><a class="page-link" style="background-color: #ff0055; color: white;" href="{{ request.path }}?category={{categoryID}}&search={{search}}&sort{{sort}}&page={{ books.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        {% for i in product.paginator.page_range %}
+        <li class="page-item {% if product.number == i %}active{% endif %}">
+            <a class="page-link" href="{{ request.path }}?category={{categoryID}}&search={{search}}&sort{{sort}}&page={{i}}">{{i}}</a>
+        </li>
+        {% endfor %}
+        {% if product.has_next %}
+        <li class="page-item"><a class="page-link" style="background-color: #ff0055; color: white;" href="{{ request.path }}?catagory={{catagoryID}}&search={{search}}&sort{{sort}}&page={{product.next_page_number}}">Next</a></li>
+        {% endif %}
+    </ul>
+
+
+    <div class="row mx-0 text-center">
+        <a class="BredTag btn w-100 mb-3 " style="font-size: x-large; color: white;">RECOMMEND</a>
+    </div>
+
+    <div class="row mb-5">
+    {% for p in recommend %}
+        <div class="col-lg-3 mb-3 container-md">
+            <div class="card CardBG h-100 ">
+                <a href="{% url 'detail' slug=p.code %}">
+                    <img src="{{ p.image.url }}"  class="card-img-top" style="height: 300px;">
+                </a>
+                <div class="card-body mb-5">
+                    <h5><a href="{% url 'detail' slug=p.code %}" style="color: #000000; font-family:Helvetica ;font-weight: bold;">{{p.name}}</a></h5>
+                    <div style="font-weight: 750">Category: {{ p.category.name }} </div>
+                    <div style="font-weight: 750">Price: {{ p.price|floatformat:2 }} $</div>
+                </div>
+                <div class="row card-body justify-content-start align-content-center mx-3">
+                    <a href="{% url 'detail' slug=p.code %}" class="btn fixline carddetail">Views Detail</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

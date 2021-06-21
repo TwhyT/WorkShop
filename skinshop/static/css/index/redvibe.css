@@ -1,0 +1,189 @@
+/* BG BLOCK */
+.Picsummer{
+    width: auto; 
+    height: 300px; 
+    background-size: cover; 
+    border-style: solid; 
+    border-width: 7.5px; 
+    border-color: white;
+}
+
+/* RED - VIBE BLOCK */
+.PicsummerBlack{
+    width: auto; 
+    height: 300px; 
+    background-size: cover; 
+    border-style: solid; 
+    border-width: 7.5px; 
+    border-color: white;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    font-weight: bolder;
+}
+
+.PicsummerBlack:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.PicsummerBlack:before {
+    content:'RED';
+}
+
+.PicsummerBlack:after {
+    content:'VIBE';
+    color: #000000;
+    position: absolute;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.PicsummerBlack:hover:before {
+    opacity: 0;
+  }
+  
+.PicsummerBlack:hover:after {
+    opacity: 100;
+  }
+
+/* SHOP - NOW BLOCK  */
+.PicsummerRed{
+    width: auto; 
+    height: 300px; 
+    background-size: cover; 
+    border-style: solid; 
+    border-width: 7.5px; 
+    border-color: white;
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.PicsummerRed:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.PicsummerRed:before {
+    content:'SHOP';
+}
+
+.PicsummerRed:after {
+    content:'NOW!';
+    color: #ff0000;
+    position: absolute;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.PicsummerRed:hover:before {
+    opacity: 0;
+  }
+  
+.PicsummerRed:hover:after {
+    opacity: 100;
+  }
+  
+/* Blood BG */
+.redvibeBG{
+    filter: contrast(150%);
+    background-image: url(https://media.giphy.com/media/f4IjBQupqojhqQzKk2/giphy.gif);
+}
+
+/* Aqua */
+.aquatext{
+    height: auto;
+    width: auto;
+    background-color: #ffffff;
+    font-size:90px;
+	text-align: center;
+    font-weight: 700;
+    text-shadow: 0px 10px 0px #ec5064, 
+                  10px 20px 0px #005f99, 
+                  -20px 30px 0px #b4cf68, 
+                  30px 40px 0px #95e1d3, 
+                  -40px 50px 0px #fce38a, 
+                  50px -40px 0px #52f0e0, 
+                  -60px -30px 0px #ff449f, 
+                  70px -20px 0px #fff5b7, 
+                  -80px -10px 0px#eaffd0 ;
+}
+
+#aquaVideo {
+    position:sticky;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 600px;
+    border-radius: 20%;
+}
+
+#aquaBtn {
+    width: 200px;
+    font-size: 40px;
+    background: #45b0ee;
+    border: 1px solid black;
+    color: #fac72f;
+    cursor: pointer;
+    position:relative;
+}
+#aquaBtn:hover {
+  background: #fac72f;
+  color: #45b0ee;
+}
+
+#aquaBtn::after {
+  content: "";
+  background-color: #fac72f;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+#aquaBtn:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+#aquaShop{
+    width: 200px;
+    font-size: 40px;
+    background: #d13b40;
+    border: 1px solid black;
+    color: #4ec5a5;
+    cursor: pointer;
+    position:relative;
+}
+#aquaShop:hover {
+  background: #4ec5a5;
+  color: #d4272c;
+}
+
+#aquaShop::after {
+  content: "";
+  background-color: #4ec5a5;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+#aquaShop:hover::after {
+  top: 0px;
+  left: 0px;
+}
